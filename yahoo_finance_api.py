@@ -10,7 +10,6 @@ class Yahoo_finance:
 
 	def get_chart(self,symbol,interval,data_range,region="US"):
 		url = self.base_url + '/get-chart'
-		print(f'url = {url}')
 		querystring = {'symbol':symbol,'interval':interval,'range':data_range,'region':region}
 		return requests.request('GET',url,params=querystring,headers=self.headers).json()
 
